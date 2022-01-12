@@ -12,12 +12,16 @@ import {
   DotsHorizontalIcon,
 } from "@heroicons/react/outline";
 import { signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 function Sidebar() {
   const { data: session } = useSession();
+  const router = useRouter();
   return (
     <div className='hidden sm:flex flex-col items-center xl:items-start xl:w-[340px] p-2 fixed h-full first-letter:'>
-      <div className='flex items-center justify-center w-14 h-14 hover-animation p-0 xl:ml-24'>
+      <div
+        className='flex items-center justify-center w-14 h-14 hover-animation p-0 xl:ml-24'
+        onClick={() => router.push("/")}>
         <Image src='https://rb.gy/ogau5a' width={30} height={30} alt='' />
       </div>
       <div className='space-y-2.5 mt-4 mb-2.5 xl:ml-24'>
