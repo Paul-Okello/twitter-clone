@@ -10,6 +10,10 @@ export default NextAuth({
     }),
     // ...add more providers here
   ],
+  secret: process.env.JWT_SECRET,
+  pages: {
+    signIn: "/login",
+  },
   callbacks: {
     async session({ session, token }) {
       session.user.tag = session.user.name
