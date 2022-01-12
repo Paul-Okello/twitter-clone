@@ -5,9 +5,6 @@ import {
   XIcon,
   PhotographIcon,
 } from "@heroicons/react/outline";
-import { useRef, useState } from "react";
-import "emoji-mart/css/emoji-mart.css";
-import { Picker } from "emoji-mart";
 import {
   addDoc,
   collection,
@@ -15,6 +12,9 @@ import {
   serverTimestamp,
   updateDoc,
 } from "firebase/firestore";
+import { useRef, useState } from "react";
+import "emoji-mart/css/emoji-mart.css";
+import { Picker } from "emoji-mart";
 import { db, storage } from "../firebase";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { useSession } from "next-auth/react";
